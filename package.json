@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MrBlawk/CMD-Roadtrip/issues"
   },
-  "homepage": "https://github.com/MrBlawk/CMD-Roadtrip#readme"
+  "homepage": "https://github.com/MrBlawk/CMD-Roadtrip#readme",
+  "dependencies": {
+    "three": "^0.135.0"
+  }
 }
