@@ -67,12 +67,6 @@ body{
     cursor: pointer;
 }
 
-
-
-
-
-
-
 #levelTwo{
     background-color: lightgreen;
 }
@@ -118,4 +112,12 @@ body{
 #levelThree{
     background-color: lightyellow;
 }
+
+
+
+#c{
+    z-index: -1;
+    position:absolute;
+    background-color: black;
+  }
 
