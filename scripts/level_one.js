@@ -1,6 +1,4 @@
-//import * as THREE from 'three'; 
-import 'gsap';
-
-
-
+function enlistFunction(){
+    document.getElementById("levelTwo").scrollIntoView({behavior: 'smooth'});
+}
 
