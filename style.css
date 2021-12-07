@@ -101,8 +101,12 @@ body{
     background-color: white;
     margin: 10vh 10% 20% 10%;
     border-radius: 5%;
-    overflow: hidden;
+    overflow-y: scroll;
     font-size: 4vh;
+}
+
+#levelTwo #textContainer::-webkit-scrollbar{
+    display: none;
 }
 
 #textContainer p:hover{
