@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 
+    font-family: 'Montserrat', sans-serif;
+    border: 1px red solid;
 }
 
 
@@ -87,6 +89,23 @@ body{
     overflow: hidden;
 
 }
+
+#levelTwo #textContainer{
+    text-align: center;
+    width: 30vw;
+    height: 80vh;
+    background-color: white;
+    margin: 10vh 10% 20% 10%;
+    border-radius: 5%;
+    overflow: hidden;
+    font-size: 4vh;
+}
+
+#textContainer p:hover{
+    font-size: 7vh;
+    overflow-wrap: break-word;
+}
+
 
 #levelThree{
     background-color: lightyellow;
