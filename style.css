@@ -2,17 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
-    margin: 0;
 
-    font-family: 'Montserrat', sans-serif;
-
-    border: 1px red solid;
 }
 
-h1{
-    text-align:center;
 
+body{
+    overflow-x: hidden;
 }
 
 .main{
@@ -20,33 +15,80 @@ h1{
     height: 100vh;
 }
 
-#levelOne{
+#levelOne {
+    height: 100vh;
+    width: 100vw;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
 
 }
 
-#bgImg{
+#levelOne .container .button-container{
+    background: white;
+    border-radius: 1vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 40vh;
+    width: 20vw;
     position: absolute;
-    width: 80%;
-    height: 80%;
+    margin-left: 70vw;
+    margin-top: 40vh;
 }
 
-#bgImg img{
-    height: 100%;
-    width: 100%;
+#levelOne .container .img-container{
+    height: 70vh;
+    width: 90vw;
+    margin: 15vh auto 0 auto;
+    background: green;
+    background-image: url('./img/bg.jpg') ;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-#levelOne #buttonContainer{
-    width: 22vw;
-    height: 34vh;
-    background-color: white;
-    margin-top: 51vh;
-    margin-left: 61vw;
+
+#levelOne .container .button-container button{
+    margin-left: 3vw; 
+    margin-top: 10vh;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 4vh 3vw;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 1vh;
+
 }
+
+
+
+
+
 
 #levelTwo{
     background-color: lightgreen;
 }
 
+#levelThree .levelThree-bg{
+    height: 80vh;
+    width: 90vw;
+    background: gray;
+    margin: 0 auto;
+    border-radius: 15px;
+    margin-top: 3vh;
+}
+
+#levelThree .van-img{
+    width: 5vw;
+    margin-left: 1vw;
+    margin-top:70vh;
+    overflow: hidden;
+
+}
+
 #levelThree{
     background-color: lightyellow;
 }
+
