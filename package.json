@@ -1,0 +1,19 @@
+{
+  "name": "cmd-roadtrip",
+  "version": "1.0.0",
+  "description": "Module CMD-Roadtrip",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrBlawk/CMD-Roadtrip.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrBlawk/CMD-Roadtrip/issues"
+  },
+  "homepage": "https://github.com/MrBlawk/CMD-Roadtrip#readme"
+}
