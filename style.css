@@ -121,7 +121,7 @@ body{
     background-color: black;
 }
 
-.container{
+#container{
     overscroll-behavior: none;
     width: 600%;
     height: 100%;
