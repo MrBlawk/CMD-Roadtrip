@@ -70,14 +70,7 @@ body{
     background-color: lightgreen;
 }
 
-#levelThree .levelThree-bg{
-    height: 80vh;
-    width: 90vw;
-    background: gray;
-    margin: 0 auto;
-    border-radius: 15px;
-    margin-top: 3vh;
-}
+
 
 #levelThree .van-img{
     width: 5vw;
@@ -112,6 +105,12 @@ body{
     background-color: lightyellow;
 }
 
+#levelThree .city{
+    height: 100vh;
+    width: 100vw;
+    background-color: red;
+    opacity: 0.5;
+}
 
 
 #c {
