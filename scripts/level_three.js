@@ -4,6 +4,8 @@ let car = document.querySelector(".van-img");
 let scrollLength = 3500;
 car.autoAlpha = 0;
 
+let bg = document.getElementById("bg-parallax");
+
 gsap.to(sections, {
   xPercent: -100 * (sections.length - 1.5),
   ease: "none",
@@ -24,7 +26,6 @@ gsap.to(car, {
     xPercent: window.innerWidth - 100,
     scrollTrigger:{
         trigger: "#levelThree",
-        ease: "power2.out",
         start: "0",
         scrub: 2,
         end: "+=" + scrollLength,
@@ -41,6 +42,16 @@ gsap.to(car, {
         markers: true,
         end: "+=50",
 
+    }
+})
+
+gsap.to(bg, {
+    xPercent: -20,
+    scrollTrigger:{
+        trigger: "#levelThree",
+        start: "0",
+        scrub: 1,
+        end: "+=" + scrollLength,
     }
 })
 
