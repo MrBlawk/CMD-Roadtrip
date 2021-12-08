@@ -77,7 +77,6 @@ body{
     margin-left: 1vw;
     margin-top:70vh;
     overflow: hidden;
-
 }
 
 #levelTwo #textContainer{
@@ -112,6 +111,17 @@ body{
     opacity: 0.5;
 }
 
+#levelThree .three{
+    background: lightblue;
+}
+
+#levelThree .two{
+    background: orange;
+}
+
+#levelThree .four{
+    background: gray;
+}
 
 #c {
     z-index: -1;
@@ -126,6 +136,7 @@ body{
     display: flex;
     flex-wrap: nowrap;
 }
+
 
   
 

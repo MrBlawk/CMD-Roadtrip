@@ -5,7 +5,7 @@ let scrollLength = 3500;
 car.autoAlpha = 0;
 
 gsap.to(sections, {
-  xPercent: -100 * (sections.length - 1),
+  xPercent: -100 * (sections.length - 1.5),
   ease: "none",
   scrollTrigger: {
     trigger: "#levelThree",
@@ -43,6 +43,7 @@ gsap.to(car, {
 
     }
 })
+
 
 
 
