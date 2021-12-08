@@ -117,9 +117,17 @@ body{
 
 #c {
     z-index: -1;
-    position:absolute;
+    position: absolute;
     background-color: black;
-  }
+}
+
+.container{
+    overscroll-behavior: none;
+    width: 600%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
 
   
 

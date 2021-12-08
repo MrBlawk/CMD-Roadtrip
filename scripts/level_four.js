@@ -1,7 +1,7 @@
 import * as THREE from '../node_modules/three/build/three.module.js';
 
 
-var scene, camera, hlight;
+var scene, camera, hlight, renderer;
 
 function resizeRendererToDisplaySize(renderer) {
     const canvas = renderer.domElement;
@@ -17,7 +17,7 @@ function resizeRendererToDisplaySize(renderer) {
 
 
 function init() {
-    const canvas = document.querySelector('#c');
+    const canvas = document.getElementById('c');
 
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 1000);
@@ -25,9 +25,9 @@ function init() {
     hlight = new THREE.AmbientLight(0xffffff, 1);
     scene.add(hlight);
 
-    var renderer = new THREE.WebGLRenderer({canvas});
+    renderer = new THREE.WebGLRenderer({antialias: true});
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    canvas.appendChild(renderer.domElement);
 
 
     function render(time) {
