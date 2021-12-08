@@ -8,6 +8,9 @@ let jobsArray = [
     "Project Manager",
     "Webdesigner",
     "Fotograaf",
+    "Programmeur",
+    "Muzikant",
+    "Animatiespecialist"
 ];
 
 for(let i = 0; i < 4; i++){
