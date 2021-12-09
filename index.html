@@ -12,26 +12,25 @@
 
     <div class="flex main bg-white-100 h-screen w-screen" id="levelOne">
 
-        <img src="./img/bg.jpg" alt="" class="m-auto w-screen align-middle " style="vertical-align: middle;">
+        <img src="./img/bg.jpg" alt="" class="m-auto w-screen align-middle ">
 
 
-        <div class="button-container">
+        <div class="absolute">
             <button onclick="enlistFunction()" class="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out">Click me</button>
         </div>
     </div>
 
-    <div class="main flex h-screen w-screen" id="levelTwo">
-        <div class="m-20 p-auto w-1/3" id="textContainer"></div>
+    <div class="grid grid-rows-3 grid-flow-col gap-4" id="levelTwo">
+        <div class="row-span-3 h-100vh h-screen" id="textContainer"></div>
 
 
-        <div class="">
-            <div class="m-20 p-auto w-2/3" id="textcontainer" >
-                <h1 style="font-size: 2vw;">Titel</h1>
+        <div class=" w-2/3">
+            <div class="row-span-2 col-span-2" id="textcontainer" >
+                <h1  style="font-size: 2vw;">Titel</h1>
                 <p style="font-size: 1vw">Bij CMD Leeuwarden kun je je in allerlei verschillende beroepen specialiseren.</p>
             </div>
-            <div class="m-20 p-auto w-1/3" id="textcontainer">
-                <h1 style="font-size: 2vw;">Titel</h1>
-                <p>Bij CMD Leeuwarden kun je je in allerlei verschillende beroepen specialiseren.</p>
+            <div class="col-span-2 flex items-stretch">
+                <button class="py-4 px-8 rounded self-center m-auto bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out">Klik hier voor biem</button>
             </div>
         </div>
     </div>
