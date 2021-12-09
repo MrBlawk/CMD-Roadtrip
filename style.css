@@ -1,65 +1,35 @@
 *{
-    margin: 0;
-    padding: 0;
+
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    border: 1px red solid;
 }
 
+
+
+/* .main{
+    width: 100vw;
+    height: 100vh;
+} */
 
 body{
     overflow-x: hidden;
 }
 
-.main{
-    width: 100vw;
-    height: 100vh;
-}
 
-#levelOne {
-    height: 100vh;
-    width: 100vw;
-}
 
-.container{
-    height: 100vh;
-    width: 100vw;
 
-}
-
-#levelOne .container .button-container{
+#levelOne .button-container{
     background: white;
-    border-radius: 1vh;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    height: 40vh;
-    width: 20vw;
     position: absolute;
-    margin-left: 70vw;
-    margin-top: 40vh;
 }
-
-#levelOne .container .img-container{
-    height: 70vh;
-    width: 90vw;
-    margin: 15vh auto 0 auto;
-    background: green;
-    background-image: url('./img/bg.jpg') ;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
 
 #levelOne .container .button-container button{
-    margin-left: 3vw; 
-    margin-top: 10vh;
     background-color: red;
     border: none;
     color: white;
-    padding: 4vh 3vw;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    border-radius: 1vh;
 }
 
 .button-container button:hover{
@@ -72,23 +42,13 @@ body{
 
 
 
-#levelThree .van-img{
-    width: 5vw;
-    margin-left: 1vw;
-    margin-top:70vh;
-    overflow: hidden;
-    z-index: 10;
-}
 
 #levelTwo #textContainer{
     text-align: center;
-    width: 30vw;
-    height: 80vh;
     background-color: white;
-    margin: 10vh 10% 20% 10%;
     border-radius: 5%;
     overflow-y: scroll;
-    font-size: 4vh;
+    font-size: 2vw;
 }
 
 #levelTwo #textContainer::-webkit-scrollbar{
@@ -96,13 +56,23 @@ body{
 }
 
 #textContainer p:hover{
-    font-size: 7vh;
+    font-size: 3vw;
     overflow-wrap: break-word;
+    font-weight: bold;
 }
 
 
 #levelThree{
     background-color: lightyellow;
+}
+
+
+#levelThree .van-img{
+    width: 5vw;
+    margin-left: 1vw;
+    margin-top:70vh;
+    overflow: hidden;
+    z-index: 10;
 }
 
 #levelThree .city{
