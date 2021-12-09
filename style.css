@@ -3,12 +3,12 @@
     box-sizing: border-box;
 }
 
-
-
-/* .main{
+/*
+main{
     width: 100vw;
     height: 100vh;
-} */
+}
+*/
 
 body{
     overflow-x: hidden;
@@ -56,7 +56,7 @@ body{
 }
 
 #textContainer p:hover{
-    font-size: 3vw;
+    font-size: 3rem;
     overflow-wrap: break-word;
     font-weight: bold;
 }
