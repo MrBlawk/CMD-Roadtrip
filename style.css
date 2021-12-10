@@ -37,7 +37,8 @@ body{
 }
 
 #levelTwo{
-    background-color: lightgreen;
+    background-color: white;
+    color: black;
 }
 
 
@@ -49,6 +50,7 @@ body{
     border-radius: 5%;
     overflow-y: scroll;
     font-size: 2vw;
+    
 }
 
 #levelTwo #textContainer::-webkit-scrollbar{
