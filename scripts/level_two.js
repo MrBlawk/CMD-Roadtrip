@@ -1,5 +1,6 @@
 const container = document.getElementById("textContainer");
 
+
 let jobsArray = [
     "Channelmanager",
     "Consultant nieuwe media",
