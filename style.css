@@ -48,12 +48,14 @@ body{
     overflow-y: scroll;
     font-size: 2vw;
 
+    
 }
 
 #levelTwo #textContainer p{
     word-break: break-all;
     word-wrap: break-word;
     overflow-wrap: break-word;
+
 }
 
 #levelTwo #textContainer::-webkit-scrollbar{
@@ -61,7 +63,7 @@ body{
 }
 
 #textContainer p:hover{
-    font-size: 3rem;
+    font-size: 3vw;
     overflow-wrap: break-word;
     word-break: break-all;
     word-wrap: break-word;
@@ -89,7 +91,6 @@ body{
 }
 
 #levelThree .one{
-    background-image: url(./img/test_huisjes.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -114,10 +115,15 @@ body{
     background-repeat: no-repeat;
 }
 
-#c {
-    z-index: -1;
+#levelFour{
+    
+}
+
+.canvas {
+
     position: absolute;
     background-color: black;
+    
 }
 
 #container{

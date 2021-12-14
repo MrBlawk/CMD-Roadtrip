@@ -31,7 +31,7 @@
     </div>
 
     <div class="grid grid-rows-3 grid-flow-col gap-4" id="levelTwo">
-        <div class="row-span-3 h-4/5 max-h-screen border-dashed border-4 border-stone-900 text-center sm:mx-2 md:mx-5 lg:mx-10" id="textContainer"></div>
+        <div class="row-span-3 h-4/5 object-fill max-h-screen border-dashed border-4 border-stone-900 text-center m-10" id="textContainer"></div>
 
 
             <div class="row-span-2 col-span-1 mt-32 ml-10 mr-10 bg-gray-200 rounded-lg" >
@@ -56,7 +56,8 @@
         style="position: absolute; width: 200vw; height: 100vh;" id="bg-parallax">
         <div class="levelThree-bg" id="container">
             <img class="van-img" src="./img/volkswagen-van.png" alt="" style="position: absolute;">
-            <section class="city one">
+            <section class="city one" >
+                <div class="main" id="communitybase"></div>
 
             </section>
             <section class="city two">
@@ -66,7 +67,7 @@
 
             </section>
             <section class="city four"></section>
-            <section class="city five"><h1>5</h1></section>
+            <section class="city five"></section>
             <section class="city six"></section>
         </div>
     </div>
@@ -82,6 +83,8 @@
     <script type="module" src="./scripts/level_two.js"></script>
     <script type="module" src="./scripts/level_three.js"></script>
     <script type="module" src="./scripts/level_four.js"></script>
+
+    <script type="module" src="./scripts/3D Scene controllers/CommunityBase.js"></script>
 </body>
 </html>
 

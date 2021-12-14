@@ -16,7 +16,7 @@ function resizeRendererToDisplaySize(renderer) {
 
 
 function init() {
-    const canvas = document.getElementById('c');
+    const canvas = document.getElementById("c")
 
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 1000);
@@ -26,6 +26,7 @@ function init() {
 
     renderer = new THREE.WebGLRenderer({antialias: true});
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor( 0xffffff, 0);
     canvas.appendChild(renderer.domElement);
 
 
