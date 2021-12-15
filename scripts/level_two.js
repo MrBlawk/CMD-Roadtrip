@@ -1,6 +1,8 @@
+
+//container vinden waar de beroepen in geplaatst worden
 const container = document.getElementById("textContainer");
 
-
+//de jobs
 let jobsArray = [
     "Channelmanager",
     "Consultant nieuwe media",
@@ -14,8 +16,22 @@ let jobsArray = [
     "Animatiespecialist"
 ];
 
+//om het overzichtelijk te houden staan in deze array de beschrijvingen van de beroepen op dezelfde volgorde.
+let jobsBeschrijving = [
+    "Channelmanager!",
+    "Consultant nieuwe media!",
+    "game designer",
+    "multimediaontwerper",
+    "project manager",
+    "webdesigner",
+    "fotograaf",
+    "programmeur",
+    "muzikant",
+    "animatiespecialist"
+]
 
 
+//voeg alle jobs toe aan de html, aan het scrolvak
 for(let i = 0; i < 4; i++){
     for(let i = 0; i < jobsArray.length; i++){
         let object = "<p class='joblistItem'>" + jobsArray[i] + "</p>";
@@ -28,7 +44,7 @@ for(let i = 0; i < 4; i++){
 }
 
 
-
+//check welk beroep wordt aangeklikt en pas de tekst aan naar de juiste inhoud
 document.querySelectorAll(".joblistItem").forEach(item => {
     let selectorContent = item.innerText;
     let textContent;
@@ -36,37 +52,37 @@ document.querySelectorAll(".joblistItem").forEach(item => {
         
         switch (selectorContent){
             case jobsArray[0]:
-                textContent = "Haha channelmanager werkt";
+                textContent = jobsBeschrijving[0];
             break;
             case jobsArray[1]:
-                textContent = "";
+                textContent = jobsBeschrijving[1];
             break;
             case jobsArray[2]:
-                textContent = "";
+                textContent = jobsBeschrijving[2];
             break;
             case jobsArray[3]:
-                textContent = "";
+                textContent = jobsBeschrijving[3];
             break;
             case jobsArray[4]:
-                textContent = "";
+                textContent = jobsBeschrijving[4];
             break;
             case jobsArray[5]:
-                textContent = "";
+                textContent = jobsBeschrijving[5];
             break;
             case jobsArray[6]:
-                textContent = "";
+                textContent = jobsBeschrijving[6];
             break;
             case jobsArray[7]:
-                textContent = "";
+                textContent = jobsBeschrijving[7];
             break;
             case jobsArray[8]:
-                textContent = "";
+                textContent = jobsBeschrijving[8];
             break;
             case jobsArray[9]:
-                textContent = "";
+                textContent = jobsBeschrijving[9];
             break;
         default:
-            textContent = "De jobselector is stuk."
+            console.log("error, dit beroep heeft geen beschrijving...")
         }
 
     document.getElementById("jobText").innerHTML = textContent;
