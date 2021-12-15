@@ -113,6 +113,8 @@ body{
     background-image: url(./img/test_huisjes.png);
     background-size: contain;
     background-repeat: no-repeat;
+    z-index: 1;
+
 }
 
 #levelThree #bgLayer{
@@ -132,11 +134,9 @@ body{
 }
 
 #levelThree #cloudLayer img{
-    position:absolute;
+    position: absolute;
     height: auto;
     width: 20vw;
-    
-    z-index: 3;
 }
 
 .canvas {

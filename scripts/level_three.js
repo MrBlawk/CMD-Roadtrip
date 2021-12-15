@@ -15,7 +15,7 @@ gsap.to(sections, {
     start: "0",
     pin: true,
     scrub: 1,
-    snap: 1 / (sections.length -1),
+    // snap: 0 / (sections.length -1),
     // base vertical scrolling on how wide the container is so it feels more natural.
     end: "+=" + scrollLength,
     markers: true
@@ -61,7 +61,7 @@ gsap.to(bg, {
 let cloud;
 let container;
 function CloudEngine(){
-    obj = "<img id='cloud' src='./img/cloud.png' alt=''>"
+    obj = "<img id='cloud' style='position: absolute;' src='./img/cloud.png' alt=''>"
     container = document.getElementById("cloudLayer");  
     container.innerHTML += obj;  
     cloud = document.getElementById("cloud");
@@ -75,7 +75,7 @@ function translate(e, x){
     var left = parseInt( css( e, 'left' ), 10 ),
         dx = left - x,
         i = 1,
-        count = 700,
+        count = 1500,
         delay = 20;
 
     function loop() {
