@@ -79,7 +79,7 @@ body{
 #levelThree .van-img{
     width: 5vw;
     margin-left: 1vw;
-    margin-top:70vh;
+    margin-top: 35%;
     overflow: hidden;
     z-index: 10;
 }
