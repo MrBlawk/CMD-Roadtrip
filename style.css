@@ -115,11 +115,28 @@ body{
     background-repeat: no-repeat;
 }
 
-#levelThree #bg-parallax{
+#levelThree #bgLayer{
     display: flex;
     width: 100%;
     height: 100vh;
     position:absolute;
+    z-index: -5;
+}
+
+#levelThree #cloudLayer{
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -4;
+}
+
+#levelThree #cloudLayer img{
+    position:absolute;
+    height: auto;
+    width: 20vw;
+    
+    z-index: 3;
 }
 
 .canvas {
