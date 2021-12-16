@@ -5,49 +5,67 @@ let obj;
 let scrollLength = 7000;
 car.autoAlpha = 0;
 
-let bg = document.getElementById("bgLayer");
-
+//scrolling first basic layer
 gsap.to(sections, {
-  xPercent: -100 * (sections.length - 1.5),
+  xPercent: -100 * (sections.length - 1),
   ease: "none",
   scrollTrigger: {
     trigger: "#levelThree",
     start: "0",
     pin: true,
     scrub: 1,
-    // snap: 0 / (sections.length -1),
+    //snap: 0 / (sections.length * 3),
     // base vertical scrolling on how wide the container is so it feels more natural.
     end: "+=" + scrollLength,
     markers: true
   }
 });
 
-
+//move car
 gsap.to(car, {
-    xPercent: window.innerWidth - 100,
+    xPercent: 700,
     scrollTrigger:{
         trigger: "#levelThree",
         start: "0",
-        scrub: 2,
+        scrub: 1,
         end: "+=" + scrollLength,
         markers: true
     }
 })
 
+//fade-out car
 gsap.to(car, {
     autoAlpha: 0,
     scrollTrigger:{
         trigger: "#levelFour",
-        start: "-=1000",
+        start: "-=1500",
         scrub: 2,
         markers: true,
-        end: "+=50",
+        end: "+=" + scrollLength ,
 
     }
 })
 
+
+
+//background layer parallax movement
+
+let bg = document.querySelectorAll(".staticbg")
+
 gsap.to(bg, {
     xPercent: -20,
+    scrollTrigger:{
+        trigger: "#levelThree",
+        start: "0",
+        scrub: 1,
+        end: "+=" + scrollLength,
+    }
+})
+
+let px3 = document.querySelectorAll(".parallax-1")
+//3rd layer (bg+1)
+gsap.to(px3, {
+    xPercent: +20,
     scrollTrigger:{
         trigger: "#levelThree",
         start: "0",
@@ -61,7 +79,7 @@ gsap.to(bg, {
 let cloud;
 let container;
 function CloudEngine(){
-    obj = "<img id='cloud' style='position: absolute;' src='./img/cloud.png' alt=''>"
+    obj = "<img id='cloud' style='position: absolute;' src='./img/parallax_asset/Sheet2/clouds.png' alt=''>"
     container = document.getElementById("cloudLayer");  
     container.innerHTML += obj;  
     cloud = document.getElementById("cloud");
