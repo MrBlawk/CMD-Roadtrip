@@ -2,7 +2,7 @@
 let sections = gsap.utils.toArray(".city");
 let car = document.querySelector(".van-img");
 let obj;
-let scrollLength = 3500;
+let scrollLength = 7000;
 car.autoAlpha = 0;
 
 let bg = document.getElementById("bgLayer");
@@ -39,7 +39,7 @@ gsap.to(car, {
     scrollTrigger:{
         trigger: "#levelFour",
         start: "-=1000",
-        scrub: 1,
+        scrub: 2,
         markers: true,
         end: "+=50",
 
