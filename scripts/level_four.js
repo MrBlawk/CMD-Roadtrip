@@ -36,7 +36,7 @@ var scene = new THREE.Scene( );
 
 
     var geometry2 = new THREE.SphereGeometry( 15,32,16);
-    var material2 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/mars-uv-map.jpeg') } );
+    var material2 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Planeet 1.png') } );
     var sphere2 = new THREE.Mesh(geometry2, material2);
 
     scene.add( sphere2 );
@@ -58,7 +58,7 @@ var scene = new THREE.Scene( );
     // create material, colour or image texture
 
 
-    var material = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/01-3.jpeg') } );
+    var material = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Planeet 2.png') } );
     var sphere = new THREE.Mesh( geometry, material );
     scene.add( sphere);
 
