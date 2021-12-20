@@ -2,6 +2,9 @@ import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/thr
 import { OrbitControls } from "https://threejs.org/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from 'https://threejs.org/examples/jsm/loaders/GLTFLoader.js';
 
+
+var objects = [];
+
 var scene = new THREE.Scene( ); 
     var camera =  new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 500);
 
@@ -47,11 +50,12 @@ var scene = new THREE.Scene( );
     // controls
     let controls = new OrbitControls( camera, renderer.domElement );
 
+    let root;
     const loader = new GLTFLoader()
     loader.load('/models/Blender-kamer-leeuwarden.glb', function(glb){
-        console.log(glb)
-        const root = glb.scene;
-        root.scale.set(0.3, 0.3, 0.3)
+        root = glb.scene;
+        root.scale.set(0.1, 0.1, 0.1)
+        root.rotation.set(0,2,0)
         scene.add(root);
     }, function(xhr){
         console.log((xhr.loaded/xhr.total * 100) + "% loaded")
@@ -65,10 +69,11 @@ var scene = new THREE.Scene( );
     var sphere2 = new THREE.Mesh(geometry2, material2);
     sphere2.receiveShadow = true;
 
+    objects.push(sphere2);
     scene.add( sphere2 );
 
-    sphere2.position.x = 30;
-    sphere2.position.y = 20;
+    sphere2.position.x = 15;
+    sphere2.position.y = 10;
     
     // creathe sphere
      var geometry = new THREE.SphereGeometry( 2,32,16);
@@ -88,12 +93,11 @@ var scene = new THREE.Scene( );
 
     var material = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet2.png') } );
     var sphere = new THREE.Mesh( geometry, material );
-    sphere.receiveShadow = true;
+    objects.push(sphere);
     scene.add(sphere);
 
-    sphere.position.x = -35;
-
-    camera.position.z = 40;
+    sphere.position.x = -10;
+    camera.position.z = 30;
 
     var sLight = new THREE.SpotLight(0xFFFFFF, 1);
     sLight.position.set(-99,100,99)
@@ -112,11 +116,16 @@ var scene = new THREE.Scene( );
 
     controls.maxDistance = 50;
 
+    document.addEventListener('mousemove', onDocumentMouseOver, false)
+    document.addEventListener('mousedown', onDocumentMouseDown, false)
+
     // game logic
     var update = function( ){
         // sphere.rotation.x += 0.01;
         sphere.rotation.y += -0.001;
         sphere2.rotation.y += 0.001;
+        root.rotation.x += 0.0001;
+        root.rotation.y += 0.0001;
     };
 
     // draw scene 
@@ -129,9 +138,53 @@ var scene = new THREE.Scene( );
     var GameLoop = function ( ){
     requestAnimationFrame(GameLoop);
 
+
     update( );
     render( );
     }; 
 
     GameLoop( );
+
+    //mouse over effects
+
+    function onDocumentMouseOver(event){
+
+        var mouse = new THREE.Vector2();
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+        var raycaster = new THREE.Raycaster();
+        raycaster.setFromCamera(mouse,camera);
+        var intersects = raycaster.intersectObjects(objects);
+
+        if (intersects && intersects.length > 0){ 
+        document.body.style.cursor = 'pointer';} 
+        else 
+        { document.body.style.cursor = 'default' }
+
+    }
+
+    function onDocumentMouseDown(event){
+        event.preventDefault();
+
+        let intersects = [];
+        var mouse = new THREE.Vector2();
+        mouse.x = (event.clientX / window.innerWidth) * 2 -1; 
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+        var raycaster = new THREE.Raycaster();
+        raycaster.setFromCamera(mouse,camera);
+        
+        for(let i = 0; i < objects.length; i++)
+        {
+            intersects[i] = raycaster.intersectObjects(objects[i]);
+        }
+
+
+        if(intersects && intersects.length > 0)
+        {
+            document.getElementById("planetText").innerHTML = "Je hebt op " + this.intersects + " geklikt."
+        } 
+        
+    }
 
