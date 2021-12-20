@@ -23,27 +23,27 @@ gsap.to(sections, {
 
 //move car
 gsap.to(car, {
-    xPercent: 700,
+    xPercent: 630,
     scrollTrigger:{
         trigger: "#levelThree",
         start: "0",
         scrub: 1,
-        end: "+=" + scrollLength,
+        end: "+=" + (scrollLength),
 
     }
 })
 
-//fade-out car
-gsap.to(car, {
-    autoAlpha: 0,
-    scrollTrigger:{
-        trigger: "#levelFour",
-        start: "-=1500",
-        scrub: 2,
-        end: "+=" + scrollLength ,
+// //fade-out car
+// gsap.to(car, {
+//     autoAlpha: 0,
+//     scrollTrigger:{
+//         trigger: "#levelFour",
+//         start: "-=1500",
+//         scrub: 2,
+//         end: "+=" + scrollLength ,
 
-    }
-})
+//     }
+// })
 
 
 
@@ -97,7 +97,7 @@ function translate(e, x){
 
     function loop() {
         
-        if(e.style.left === -1000 )
+        if(e.style.left === -1500 )
         {
             console.log("x point reached");
             e = null;

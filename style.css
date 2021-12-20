@@ -34,15 +34,16 @@ body{
     border-radius: 5%;
     overflow-y: scroll;
     font-size: 2vw;
-
-    
+    max-width: 1000px;
+    min-width: 240px;
+ 
 }
 
 #levelTwo #textContainer p{
     word-break: break-all;
     word-wrap: break-word;
     overflow-wrap: break-word;
-
+    overflow-x: hidden;
 }
 
 #levelTwo #textContainer::-webkit-scrollbar{
@@ -50,7 +51,7 @@ body{
 }
 
 #textContainer p:hover{
-    font-size: 3vw;
+    
     overflow-wrap: break-word;
     word-break: break-all;
     word-wrap: break-word;
@@ -142,10 +143,8 @@ body{
 } */
 
 #levelThree #cloudLayer img{
-    position: absolute;
-    height: 100vh;
-    width: 100%;
     z-index: 3;
+    
 }
 
 

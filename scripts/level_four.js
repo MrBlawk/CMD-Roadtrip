@@ -3,7 +3,32 @@ import { OrbitControls } from "https://threejs.org/examples/jsm/controls/OrbitCo
 import { GLTFLoader } from 'https://threejs.org/examples/jsm/loaders/GLTFLoader.js';
 
 var scene = new THREE.Scene( ); 
-    var camera =  new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 500);
+    var camera =  new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 500);
+
+  //skybox stuff
+  //settingup the materialarray and defining the textures to a let.
+  let materialArray = [];
+  let texture_ft = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
+  let texture_rt = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
+  let texture_lt = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
+  let texture_up = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
+  let texture_dwn = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
+  let texture_bk = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
+
+  //pushing the materials to the array.
+  materialArray.push(new THREE.MeshBasicMaterial({map: texture_ft}));
+  materialArray.push(new THREE.MeshBasicMaterial({map: texture_rt}));
+  materialArray.push(new THREE.MeshBasicMaterial({map: texture_lt}));
+  materialArray.push(new THREE.MeshBasicMaterial({map: texture_up}));
+  materialArray.push(new THREE.MeshBasicMaterial({map: texture_dwn}));
+  materialArray.push(new THREE.MeshBasicMaterial({map: texture_bk}));
+
+  for(let i=0;i<6;i++)
+    materialArray[i].side = THREE.BackSide;
+
+  let skyboxGeo = new THREE.BoxGeometry(100,100,100);
+  let skybox = new THREE.Mesh(skyboxGeo,materialArray);
+  scene.add(skybox);
 
     var renderer = new THREE.WebGLRenderer( {alpha:true, antialias:true} );
     renderer.setSize( window.innerWidth, window.innerHeight );
@@ -35,9 +60,10 @@ var scene = new THREE.Scene( );
     })
 
 
-    var geometry2 = new THREE.SphereGeometry( 15,32,16);
-    var material2 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Planeet 1.png') } );
+    var geometry2 = new THREE.SphereGeometry( 2,32,16);
+    var material2 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet1.png') } );
     var sphere2 = new THREE.Mesh(geometry2, material2);
+    sphere2.receiveShadow = true;
 
     scene.add( sphere2 );
 
@@ -45,7 +71,7 @@ var scene = new THREE.Scene( );
     sphere2.position.y = 20;
     
     // creathe sphere
-     var geometry = new THREE.SphereGeometry( 15,32,16);
+     var geometry = new THREE.SphereGeometry( 2,32,16);
     // var cubeMaterials = [
     //     new THREE.MeshLambertMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
     //     new THREE.MeshPhongMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
@@ -57,23 +83,40 @@ var scene = new THREE.Scene( );
  
     // create material, colour or image texture
 
+    
 
-    var material = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Planeet 2.png') } );
+
+    var material = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet2.png') } );
     var sphere = new THREE.Mesh( geometry, material );
-    scene.add( sphere);
+    sphere.receiveShadow = true;
+    scene.add(sphere);
 
     sphere.position.x = -35;
 
     camera.position.z = 40;
 
-    
-    var ambientLight = new THREE.AmbientLight( 0xFFFFFF, 0.8  )
-    scene.add( ambientLight )
+    var sLight = new THREE.SpotLight(0xFFFFFF, 1);
+    sLight.position.set(-99,100,99)
+
+    sLight.castShadow = true;
+
+    sLight.shadow.mapSize.width = 1024;
+    sLight.shadow.mapSize.height = 1024;
+
+    sLight.shadow.camera.near = 500;
+    sLight.shadow.camera.far = 4000;
+    scene.add(sLight);
+
+    var ambientLight = new THREE.AmbientLight( 0xFFFFFF, 0.5)
+    scene.add( ambientLight );
+
+    controls.maxDistance = 50;
+
     // game logic
     var update = function( ){
         // sphere.rotation.x += 0.01;
-        sphere.rotation.y += -0.01;
-        sphere2.rotation.y += 0.01;
+        sphere.rotation.y += -0.001;
+        sphere2.rotation.y += 0.001;
     };
 
     // draw scene 
@@ -84,7 +127,7 @@ var scene = new THREE.Scene( );
 
     // run game loop (update, render, repeat)
     var GameLoop = function ( ){
-    requestAnimationFrame( GameLoop);
+    requestAnimationFrame(GameLoop);
 
     update( );
     render( );
