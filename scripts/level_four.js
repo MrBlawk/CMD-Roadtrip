@@ -46,6 +46,7 @@ var scene = new THREE.Scene( );
 
     // controls
     let controls = new OrbitControls( camera, renderer.domElement );
+    controls.maxDistance = 50;
 
     const loader = new GLTFLoader()
     loader.load('/models/Blender-kamer-leeuwarden.glb', function(glb){
@@ -60,32 +61,11 @@ var scene = new THREE.Scene( );
     })
 
 
-    var geometry2 = new THREE.SphereGeometry( 2,32,16);
-    var material2 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet1.png') } );
-    var sphere2 = new THREE.Mesh(geometry2, material2);
-    sphere2.receiveShadow = true;
-
-    scene.add( sphere2 );
-
-    sphere2.position.x = 30;
-    sphere2.position.y = 20;
     
     // creathe sphere
-     var geometry = new THREE.SphereGeometry( 2,32,16);
-    // var cubeMaterials = [
-    //     new THREE.MeshLambertMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
-    //     new THREE.MeshPhongMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
-    //     new THREE.MeshLambertMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
-    //     new THREE.MeshPhongMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
-    //     new THREE.MeshLambertMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
-    //     new THREE.MeshPhongMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } )
-    // ];
- 
-    // create material, colour or image texture
 
-    
-
-
+    // Sphere 1
+    var geometry = new THREE.SphereGeometry( 2,32,16);
     var material = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet2.png') } );
     var sphere = new THREE.Mesh( geometry, material );
     sphere.receiveShadow = true;
@@ -93,6 +73,85 @@ var scene = new THREE.Scene( );
 
     sphere.position.x = -35;
 
+
+    // Sphere 2    
+    var material2 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet1.png') } );
+    var sphere2 = new THREE.Mesh(geometry, material2);
+    sphere2.receiveShadow = true;
+
+    scene.add( sphere2 );
+
+    sphere2.position.x = 30;
+    sphere2.position.y = 20;
+
+    // Sphere 3
+    var material3 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet3.png') } );
+    var sphere3 = new THREE.Mesh(geometry, material3);
+    sphere3.receiveShadow = true;
+
+    scene.add( sphere3 );
+
+    sphere3.position.x = 10;
+    sphere3.position.y = 20;
+    sphere3.position.z = 30;
+
+
+    // Sphere 4
+    var material4 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet4.png') } );
+    var sphere4 = new THREE.Mesh(geometry, material4);
+    sphere4.receiveShadow = true;
+
+    scene.add( sphere4 );
+
+    sphere4.position.x = -30;
+    sphere4.position.y = 20;
+    sphere4.position.z = 10;
+
+    // Sphere 5
+    var material5 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet5.png') } );
+    var sphere5 = new THREE.Mesh(geometry, material5);
+    sphere5.receiveShadow = true;
+
+    scene.add( sphere5 );
+
+    sphere5.position.x = -10;
+    sphere5.position.y = 10;
+    sphere5.position.z = 15;
+
+    // Sphere 6
+    var material6 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet6.png') } );
+    var sphere6 = new THREE.Mesh(geometry, material6);
+    sphere6.receiveShadow = true;
+
+    scene.add( sphere6 );
+
+    sphere6.position.x = 5;
+    sphere6.position.y = 5;
+    sphere6.position.z = 30;
+
+    // Sphere 7
+    var material7 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet7.png') } );
+    var sphere7 = new THREE.Mesh(geometry, material7);
+    sphere7.receiveShadow = true;
+
+    scene.add( sphere7 );
+
+    sphere7.position.x = 20;
+    sphere7.position.y = -5;
+    sphere7.position.z = 30;
+
+    // Sphere 8
+    var material8 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet8.png') } );
+    var sphere8 = new THREE.Mesh(geometry, material8);
+    sphere8.receiveShadow = true;
+
+    scene.add( sphere8 );
+
+    sphere8.position.x = 10;
+    sphere8.position.y = 20;
+    sphere8.position.z = 15;
+
+    // camera position
     camera.position.z = 40;
 
     var sLight = new THREE.SpotLight(0xFFFFFF, 1);
@@ -117,6 +176,8 @@ var scene = new THREE.Scene( );
         // sphere.rotation.x += 0.01;
         sphere.rotation.y += -0.001;
         sphere2.rotation.y += 0.001;
+        sphere3.rotation.y += 0.01;
+        sphere4.rotation.y += 0.02;
     };
 
     // draw scene 
