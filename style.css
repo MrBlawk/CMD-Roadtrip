@@ -1,10 +1,7 @@
 
 body{
     overflow-x: hidden;
-    
 }
-
-
 
 
 #levelOne .button-container{
@@ -63,21 +60,29 @@ body{
 
 #levelThree{
     background-color: white;
+    min-width: 1280px;
+    max-width: 1920px;
+    min-height: 720px;
+    max-height: 1080px;
 }
 
 
 #levelThree .van-img{
-    width: 10vw;
+    width: 250px;
     height: auto;
     margin-left: 5vw;
-    margin-top: 46%;
+    margin-top: 900px;
     overflow: hidden;
     z-index: 10;
 }
 
 #levelThree .city{
-    height: 100vh;
-    width: 100vw;
+    min-width: 1280px;
+    max-width: 1920px;
+    min-height: 720px;
+    max-height: 1080px;
+    height: 100%;
+    width: 100%;
     opacity: 1;
     background-size: contain;
     background-repeat: no-repeat;
@@ -113,7 +118,7 @@ body{
 #levelThree .parallax-bg-1{
     background-image: url(./img/parallax_asset/Backgrounds/bg_layer_1.png);
     display: flex;
-    width: 700%;
+    width: 600%;
     position: absolute;
     z-index: -3;
 }
@@ -208,6 +213,7 @@ body{
     display: flex;
     width: 700%;
     height: 100vh;
+
 }
 
 
