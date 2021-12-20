@@ -1,11 +1,7 @@
-*{
-    /* box-sizing: border-box; */
-}
-
-
 
 body{
     overflow-x: hidden;
+    
 }
 
 
@@ -83,9 +79,11 @@ body{
     height: 100vh;
     width: 100vw;
     opacity: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-#levelThree .one{
+/* #levelThree .one{
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -108,9 +106,7 @@ body{
 
     background-size: contain;
     background-repeat: no-repeat;
-    z-index: 1;
-
-}
+} */
 
 /* background layers */
 
@@ -118,7 +114,6 @@ body{
     background-image: url(./img/parallax_asset/Backgrounds/bg_layer_1.png);
     display: flex;
     width: 700%;
-    height: 100vh;
     position: absolute;
     z-index: -3;
 }
@@ -127,25 +122,23 @@ body{
     background-image: url(./img/parallax_asset/Backgrounds/bg_layer_2.png);
     display: flex;
     width: 700%;
-    height: 100vh;
     position: absolute;
     z-index: -4;
 }
 
 /* cloudlayer (screenwide) */
 
-#levelThree #cloudLayer{
-    display: block;
+/* #levelThree #cloudLayer{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     z-index: 3;
-}
+} */
 
 #levelThree #cloudLayer img{
     position: absolute;
-    height: auto;
-    width: 50vw;
+    height: 100vh;
+    width: 100%;
     z-index: 3;
 }
 
@@ -212,10 +205,9 @@ body{
 
 #container{
     overscroll-behavior: none;
-    width: 600%;
-    height: 100%;
     display: flex;
-    flex-wrap: nowrap;
+    width: 700%;
+    height: 100vh;
 }
 
 

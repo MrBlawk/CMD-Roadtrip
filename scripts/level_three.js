@@ -17,7 +17,7 @@ gsap.to(sections, {
     //snap: 0 / (sections.length * 3),
     // base vertical scrolling on how wide the container is so it feels more natural.
     end: "+=" + scrollLength,
-    markers: true
+
   }
 });
 
@@ -29,7 +29,7 @@ gsap.to(car, {
         start: "0",
         scrub: 1,
         end: "+=" + scrollLength,
-        markers: true
+
     }
 })
 
@@ -40,7 +40,6 @@ gsap.to(car, {
         trigger: "#levelFour",
         start: "-=1500",
         scrub: 2,
-        markers: true,
         end: "+=" + scrollLength ,
 
     }
@@ -83,7 +82,7 @@ function CloudEngine(){
     container = document.getElementById("cloudLayer");  
     container.innerHTML += obj;  
     cloud = document.getElementById("cloud");
-    cloud.style.left = "110%";
+    cloud.style.left = "110%%";
     translate(cloud, "-500");
 
 }
@@ -93,12 +92,12 @@ function translate(e, x){
     var left = parseInt( css( e, 'left' ), 10 ),
         dx = left - x,
         i = 1,
-        count = 1500,
-        delay = 20;
+        count = 3000,
+        delay = 1;
 
     function loop() {
         
-        if(e.style.left === -500 )
+        if(e.style.left === -1000 )
         {
             console.log("x point reached");
             e = null;
@@ -113,9 +112,6 @@ function translate(e, x){
         i += 1;
         e.style.left = ( left - ( dx * i / count ) ).toFixed( 0 ) + 'px';
         setTimeout( loop, delay );
-        console.log(e.style.left)
-  
-
     }
     
     loop();
