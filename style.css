@@ -185,5 +185,19 @@ body{
 #planet-text-container::-webkit-scrollbar{
     display: none;
 }
-  
 
+::-webkit-scrollbar{
+    width: 12px;
+    height: 90px;
+
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#00d2ff, #3a7bd5);
+    border: 1px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(#f2709c, #ff9472);
+}
+}
