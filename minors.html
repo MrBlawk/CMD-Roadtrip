@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://unpkg.com/tailwindcss@%5E2/dist/tailwind.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minorplanets</title>
+</head>
+<body>
+    <div class="main" id="levelFour">
+        <img src="./img/Minor_Planet/telescoop/Telescoop_Midden.png" alt="" class="absolute w-full h-full" style="pointer-events: none;">
+        <div id="planet-text-container" class="absolute ml-10 mt-10 text-white h-3/6 w-2/6 overflow-y-auto">
+        <h1 id="planetHeader" class=" text-center py-3 font-bold text-xl"></h1>
+        <p  id="planetParagraph" class="text-sm text-center px-4"></p> <br>
+        <li id="planetList" class="text-sm text-center list-none px-4"></li>
+        </div>
+        <div id="c"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <script type="module" src="./scripts/level_four.js"></script>
+</body>
+</html>
+
+<script>
+    let spaceTheme = new Audio("./audio/spacetheme.mp3");
+    spaceTheme.volume = 0.2;
+    window.onload(spaceTheme.play());
+</script>

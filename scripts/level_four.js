@@ -11,6 +11,7 @@ var minors = ["artandsound", "concepting", "gd3d", "bad", "ondernemen", "sds", "
 var mouse = new THREE.Vector2();
 
 
+
 var scene = new THREE.Scene( ); 
     var camera =  new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 500);
     // camera position
@@ -108,7 +109,7 @@ var scene = new THREE.Scene( );
     // create minor planets
 
     //custom positions for each planet
-    var planetX = [-18,     -10,      -6,     -3,     5,    8,   12,    13]
+    var planetX = [-13,     -10,      -6,     -3,     5,    8,   12,    13]
     var planetY = [-10,       10,      -5,      3,     12,    -3,   10,    2]
     var planetZ = [0,       10,      -10,     -5,    -8,     0,   5,    -5]
 
@@ -241,7 +242,6 @@ var scene = new THREE.Scene( );
         {
             let selectedPlanet = intersects[0].object.userData.name;
             console.log(selectedPlanet);
-
             switch (selectedPlanet) {
                 case "artandsound":
                     console.log(selectedPlanet);
@@ -295,7 +295,7 @@ var scene = new THREE.Scene( );
                     break;
             }
         
-            document.getElementById("planetText").innerHTML = selectedPlanet;
+
         }
     }
 
