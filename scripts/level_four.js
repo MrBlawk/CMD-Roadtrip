@@ -224,26 +224,44 @@ var scene = new THREE.Scene( );
                 case "concepting":
                     console.log(selectedPlanet);
                     header.innerHTML = "Concepting";
-                    paragraph.innerHTML = "Altijd een tof idee gehad, maar nooit aan begonnen? Bij concepting krijg je de kans om je eigen idee uit te werken met hulp van docenten en medestudenten.";
+                    paragraph.innerHTML = "Altijd een tof idee gehad, maar nooit aan begonnen? Bij concepting krijg je de kans om je eigen idee uit te werken met hulp van docenten en medestudenten." + "<p>Wat leer je:</p>";
                     list.innerHTML = "Persoonlijk creatief leiderschap" + "<li>Ideeën omzetten naar designs</li>" + "<li>zelfkennis, zelfvertrouwen en zelfstandigheid</li>"
                     break;
                 case "gd3d":
-
+                    console.log(selectedPlanet);
+                    header.innerHTML = "Gamedevelopment & 3D";
+                    paragraph.innerHTML = "Voor iedereen met nieuwsgierigheid naar bijvoorbeeld animeren, visualiseren in 2D of 3D en/of gamedevelopment." + "<p>Wat leer je:</p>";
+                    list.innerHTML = "Animeren" + "<li>2D en 3D visualiseren</li>" + "<li>Game ontwikkeling</li>" + "<li>Programmeren</li>" + "<li>Storytelling en tekenen</li>";
                     break;    
                 case "bad":
-
+                    console.log(selectedPlanet);
+                    header.innerHTML = "Branding & Advertisement";
+                    paragraph.innerHTML = "Pakkende en overtuigende boodschappen creëren met beeld en woorden als basisingrediënten." + "<p>Wat leer je:</p>";
+                    list.innerHTML = "Alles over campagnes" + "<li>Video, foto en grafisch design</li>" + "<li>Copywriting</li>" + "<li>Logobranding</li>" + "<li>Huisstijlen</li>";
                     break;     
                 case "ondernemen":
-
+                    console.log(selectedPlanet);
+                    header.innerHTML = "Ondernemen";
+                    paragraph.innerHTML = "De wereld van een ondernemer verkennen door zelfstandig aan je eigen onderneming te werken." + "<p>Wat leer je:</p>";
+                    list.innerHTML = "Marketing" + "<li>Ondernemen</li>" + "<li>Persoonlijke ontwikkeling</li>";
                     break;
                 case "sds":
-
+                    console.log(selectedPlanet);
+                    header.innerHTML = "Sustainable Design Solutions";
+                    paragraph.innerHTML = "Innovatieve oplossingen ontwerpen voor complexe vraagstukken rondom duuzaamheid." + "<p>Wat leer je:</p>";
+                    list.innerHTML = "Design Thinking" + "<li>Innovatief en creatief denken</li>" + "<li>Mensgerichtheid</li>" + "<li>Structuur geven</li>";
                     break;
                 case "tnw":
-
+                    console.log(selectedPlanet);
+                    header.innerHTML = "The Next Web";
+                    paragraph.innerHTML = "Het leren maken van vernieuwende websites en apps." + "<p>Wat leer je:</p>";
+                    list.innerHTML = "User Interface Design" + "<li>User Experience Design</li>" + "<li>Front-end development</li>" + "<li>Programmeren</li>";
                     break;    
                 case "neuromarketing":
-
+                    console.log(selectedPlanet);
+                    header.innerHTML = "Neuromarketing";
+                    paragraph.innerHTML = "Kennis die je nodig hebt om koopgedrag te meten, voorspellen en beïnvloeden." + "<p>Wat leer je:</p>";
+                    list.innerHTML = "Sociale psychologie" + "<li>Gedragswetenschappen</li>" + "<li>Neurowetenschappen</li>";
                     break;       
                 default:
                     break;
