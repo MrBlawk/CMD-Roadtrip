@@ -204,6 +204,11 @@ var scene = new THREE.Scene( );
         //make raycasts that checks for objects that are in the planets array
         var intersects = ray.intersectObjects(planets);
 
+        //get header, paragraph and list to insert data
+        let header = document.getElementById("planetHeader");
+        let paragraph = document.getElementById("planetParagraph");
+        let list = document.getElementById("planetList");
+
         if(intersects.length > 0)
         {
             let selectedPlanet = intersects[0].object.userData.name;
@@ -211,10 +216,16 @@ var scene = new THREE.Scene( );
 
             switch (selectedPlanet) {
                 case "artandsound":
-
+                    console.log(selectedPlanet);
+                    header.innerHTML = "Art 'n Sound";
+                    paragraph.innerHTML = "Zit je helemaal in de wereld van muziek en/of audio, dan klinkt dit als muziek in je oren!" + "<p>Wat leer je:</p>";
+                    list.innerHTML = "Sound Effects" + "<li>Componeren</li>";
                     break;
                 case "concepting":
-
+                    console.log(selectedPlanet);
+                    header.innerHTML = "Concepting";
+                    paragraph.innerHTML = "Altijd een tof idee gehad, maar nooit aan begonnen? Bij concepting krijg je de kans om je eigen idee uit te werken met hulp van docenten en medestudenten.";
+                    list.innerHTML = "Persoonlijk creatief leiderschap" + "<li>Ideeën omzetten naar designs</li>" + "<li>zelfkennis, zelfvertrouwen en zelfstandigheid</li>"
                     break;
                 case "gd3d":
 
