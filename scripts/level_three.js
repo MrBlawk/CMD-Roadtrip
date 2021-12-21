@@ -79,7 +79,7 @@ gsap.to(px3, {
 let cloud;
 let container;
 function CloudEngine(){
-    obj = "<img id='cloud' style='position: absolute;' src='./img/parallax_asset/Sheet2/clouds.png' alt=''>"
+    obj = "<img id='cloud' style='position: absolute;' src='./img/parallax_asset/wolkjes.png' alt=''>"
     container = document.getElementById("cloudLayer");  
     container.innerHTML += obj;  
     cloud = document.getElementById("cloud");

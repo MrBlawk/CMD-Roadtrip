@@ -83,6 +83,12 @@ var scene = new THREE.Scene( );
     controls.maxDistance = 50;
     controls.enableZoom = false;
     controls.enablePan = false;
+    controls.maxPolarAngle = Math.PI / 2;
+    controls.rotateSpeed = 0.5;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = (-0.1);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.1;
 
 
     // let root;
@@ -177,6 +183,7 @@ var scene = new THREE.Scene( );
     // game logic
     var update = function( ){
         // sphere.rotation.x += 0.01;
+        controls.update();
     };
 
     // draw scene 
