@@ -3,35 +3,44 @@ import { OrbitControls } from "https://threejs.org/examples/jsm/controls/OrbitCo
 import { GLTFLoader } from 'https://threejs.org/examples/jsm/loaders/GLTFLoader.js';
 
 
-var objects = [];
+
+
+var planets = [];
+var minors = ["artandsound", "concepting", "gd3d", "bad", "ondernemen", "sds", "tnw", "neuromarketing"];
+
+var raycaster = new THREE.Raycaster();
+var mouse = new THREE.Vector2();
+
 
 var scene = new THREE.Scene( ); 
     var camera =  new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 500);
+    // camera position
+    camera.position.z = 40;
 
-  //skybox stuff
-  //settingup the materialarray and defining the textures to a let.
-  let materialArray = [];
-  let texture_ft = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
-  let texture_rt = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
-  let texture_lt = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
-  let texture_up = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
-  let texture_dwn = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
-  let texture_bk = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
+    //skybox stuff
+    //settingup the materialarray and defining the textures to a let.
+    let materialArray = [];
+    let texture_ft = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
+    let texture_rt = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
+    let texture_lt = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
+    let texture_up = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
+    let texture_dwn = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
+    let texture_bk = new THREE.TextureLoader().load('./img/cubemap/sterren-bg.jpeg');
 
-  //pushing the materials to the array.
-  materialArray.push(new THREE.MeshBasicMaterial({map: texture_ft}));
-  materialArray.push(new THREE.MeshBasicMaterial({map: texture_rt}));
-  materialArray.push(new THREE.MeshBasicMaterial({map: texture_lt}));
-  materialArray.push(new THREE.MeshBasicMaterial({map: texture_up}));
-  materialArray.push(new THREE.MeshBasicMaterial({map: texture_dwn}));
-  materialArray.push(new THREE.MeshBasicMaterial({map: texture_bk}));
+    //pushing the materials to the array.
+    materialArray.push(new THREE.MeshBasicMaterial({map: texture_ft}));
+    materialArray.push(new THREE.MeshBasicMaterial({map: texture_rt}));
+    materialArray.push(new THREE.MeshBasicMaterial({map: texture_lt}));
+    materialArray.push(new THREE.MeshBasicMaterial({map: texture_up}));
+    materialArray.push(new THREE.MeshBasicMaterial({map: texture_dwn}));
+    materialArray.push(new THREE.MeshBasicMaterial({map: texture_bk}));
 
-  for(let i=0;i<6;i++)
-    materialArray[i].side = THREE.BackSide;
+    for(let i=0;i<6;i++)
+        materialArray[i].side = THREE.BackSide;
 
-  let skyboxGeo = new THREE.BoxGeometry(100,100,100);
-  let skybox = new THREE.Mesh(skyboxGeo,materialArray);
-  scene.add(skybox);
+    let skyboxGeo = new THREE.BoxGeometry(100,100,100);
+    let skybox = new THREE.Mesh(skyboxGeo,materialArray);
+    scene.add(skybox);
 
     var renderer = new THREE.WebGLRenderer( {alpha:true, antialias:true} );
     renderer.setSize( window.innerWidth, window.innerHeight );
@@ -50,136 +59,78 @@ var scene = new THREE.Scene( );
     // controls
     let controls = new OrbitControls( camera, renderer.domElement );
     controls.maxDistance = 50;
-
-    let root;
-    const loader = new GLTFLoader()
-    loader.load('/models/Blender-kamer-leeuwarden.glb', function(glb){
-        root = glb.scene;
-        root.scale.set(0.1, 0.1, 0.1)
-        root.rotation.set(0,2,0)
-        scene.add(root);
-    }, function(xhr){
-        console.log((xhr.loaded/xhr.total * 100) + "% loaded")
-    }, function(error){
-        console.log("An error occured")
-    })
+    controls.enableZoom = false;
+    controls.enablePan = false;
 
 
-    
-    // creathe sphere
-
-    // Sphere 1
-    var geometry = new THREE.SphereGeometry( 2,32,16);
-    var material = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet2.png') } );
-    var sphere = new THREE.Mesh( geometry, material );
-    sphere.receiveShadow = true;
-    scene.add(sphere);
-
-    sphere.position.x = -35;
-
-
-    // Sphere 2    
-    var material2 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet1.png') } );
-    var sphere2 = new THREE.Mesh(geometry, material2);
-    sphere2.receiveShadow = true;
-
-    objects.push(sphere2);
-    scene.add( sphere2 );
-
-    sphere2.position.x = 15;
-    sphere2.position.y = 10;
-    
-    // creathe sphere
-     var geometry = new THREE.SphereGeometry( 2,32,16);
-    // var cubeMaterials = [
-    //     new THREE.MeshLambertMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
-    //     new THREE.MeshPhongMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
-    //     new THREE.MeshLambertMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
-    //     new THREE.MeshPhongMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
-    //     new THREE.MeshLambertMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
-    //     new THREE.MeshPhongMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } )
-    // ];
- 
-    // create material, colour or image texture
+    // let root;
+    // const loader = new GLTFLoader()
+    // loader.load('/models/Blender-kamer-leeuwarden.glb', function(glb){
+    //     root = glb.scene;
+    //     root.scale.set(0.1, 0.1, 0.1)
+    //     root.rotation.set(0,2,0)
+    //     scene.add(root);
+    // }, function(xhr){
+    //     console.log((xhr.loaded/xhr.total * 100) + "% loaded")
+    // }, function(error){
+    //     console.log("An error occured")
+    // })
 
 
-    // Sphere 3
-    var material3 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet3.png') } );
-    var sphere3 = new THREE.Mesh(geometry, material3);
-    sphere3.receiveShadow = true;
+    // create minor planets
 
-    scene.add( sphere3 );
+    var planetX = [-18,     -10,      -6,     -3,     5,    8,   15,    20]
+    var planetY = [0,       10,      -1,      8,     16,    0,   15,    2]
+    var planetZ = [0,       10,      -10,     -5,    -8,     0,   5,    0]
 
-    var material = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet2.png') } );
-    var sphere = new THREE.Mesh( geometry, material );
-    objects.push(sphere);
-    scene.add(sphere);
+    function createSpheres(type){
+        for(let i = 0; i < minors.length; i++)
+        {
+            switch (minors[i]) {
+                case "artandsound":
+                    createMesh(minors[i], planetX[i], planetY[i], planetZ[i]);
+                    break;
+                case "concepting":
+                    createMesh(minors[i], planetX[i], planetY[i], planetZ[i]);
+                    break;
+                case "gd3d":
+                    createMesh(minors[i], planetX[i], planetY[i], planetZ[i]);
+                    break;    
+                case "bad":
+                    createMesh(minors[i], planetX[i], planetY[i], planetZ[i]);
+                    break;     
+                case "ondernemen":
+                    createMesh(minors[i], planetX[i], planetY[i], planetZ[i]);
+                    break;
+                case "sds":
+                    createMesh(minors[i], planetX[i], planetY[i], planetZ[i]);
+                    break;
+                case "tnw":
+                    createMesh(minors[i], planetX[i], planetY[i], planetZ[i]);
+                    break;    
+                case "neuromarketing":
+                    createMesh(minors[i], planetX[i], planetY[i], planetZ[i]);
+                    break;       
+                default:
+                    break;
+            }
+        }
 
-    sphere.position.x = -10;
-    camera.position.z = 30;
-    sphere3.position.x = 10;
-    sphere3.position.y = 20;
-    sphere3.position.z = 30;
+        function createMesh(texture, x, y, z){
+            var geometry = new THREE.SphereGeometry(2, 32, 16);
+            var material = new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/' + texture + ".png")})
+            var sphere = new THREE.Mesh(geometry, material);
+            sphere.position.set(x, y, z)
+            sphere.userData.name = texture;
+            console.log(sphere.userData.name)
+            planets.push(sphere);
+            scene.add(sphere);
+        }
+    }
 
 
-    // Sphere 4
-    var material4 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet4.png') } );
-    var sphere4 = new THREE.Mesh(geometry, material4);
-    sphere4.receiveShadow = true;
 
-    scene.add( sphere4 );
-
-    sphere4.position.x = -30;
-    sphere4.position.y = 20;
-    sphere4.position.z = 10;
-
-    // Sphere 5
-    var material5 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet5.png') } );
-    var sphere5 = new THREE.Mesh(geometry, material5);
-    sphere5.receiveShadow = true;
-
-    scene.add( sphere5 );
-
-    sphere5.position.x = -10;
-    sphere5.position.y = 10;
-    sphere5.position.z = 15;
-
-    // Sphere 6
-    var material6 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet6.png') } );
-    var sphere6 = new THREE.Mesh(geometry, material6);
-    sphere6.receiveShadow = true;
-
-    scene.add( sphere6 );
-
-    sphere6.position.x = 5;
-    sphere6.position.y = 5;
-    sphere6.position.z = 30;
-
-    // Sphere 7
-    var material7 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet7.png') } );
-    var sphere7 = new THREE.Mesh(geometry, material7);
-    sphere7.receiveShadow = true;
-
-    scene.add( sphere7 );
-
-    sphere7.position.x = 20;
-    sphere7.position.y = -5;
-    sphere7.position.z = 30;
-
-    // Sphere 8
-    var material8 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/Planeet8.png') } );
-    var sphere8 = new THREE.Mesh(geometry, material8);
-    sphere8.receiveShadow = true;
-
-    scene.add( sphere8 );
-
-    sphere8.position.x = 10;
-    sphere8.position.y = 20;
-    sphere8.position.z = 15;
-
-    // camera position
-    camera.position.z = 40;
-
+    //creating lightsources for the scene
     var sLight = new THREE.SpotLight(0xFFFFFF, 1);
     sLight.position.set(-99,100,99)
 
@@ -195,26 +146,23 @@ var scene = new THREE.Scene( );
     var ambientLight = new THREE.AmbientLight( 0xFFFFFF, 0.5)
     scene.add( ambientLight );
 
-    controls.maxDistance = 50;
 
-    document.addEventListener('mousemove', onDocumentMouseOver, false)
-    document.addEventListener('mousedown', onDocumentMouseDown, false)
+
 
     // game logic
     var update = function( ){
         // sphere.rotation.x += 0.01;
-        sphere.rotation.y += -0.001;
-        sphere2.rotation.y += 0.001;
-        root.rotation.x += 0.0001;
-        root.rotation.y += 0.0001;
-        sphere3.rotation.y += 0.01;
-        sphere4.rotation.y += 0.02;
     };
 
     // draw scene 
     var render = function ( ){
     renderer.render(scene, camera);
     };
+
+    //start creating the planets
+    createSpheres();
+
+    window.addEventListener('mousedown', onDocumentMouseDown, false);
 
 
     // run game loop (update, render, repeat)
@@ -229,45 +177,33 @@ var scene = new THREE.Scene( );
     GameLoop( );
 
     //mouse over effects
-
-    function onDocumentMouseOver(event){
-
-        var mouse = new THREE.Vector2();
-        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-        var raycaster = new THREE.Raycaster();
-        raycaster.setFromCamera(mouse,camera);
-        var intersects = raycaster.intersectObjects(objects);
-
-        if (intersects && intersects.length > 0){ 
-        document.body.style.cursor = 'pointer';} 
-        else 
-        { document.body.style.cursor = 'default' }
-
-    }
-
     function onDocumentMouseDown(event){
-        event.preventDefault();
-
-        let intersects = [];
-        var mouse = new THREE.Vector2();
-        mouse.x = (event.clientX / window.innerWidth) * 2 -1; 
-        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-        var raycaster = new THREE.Raycaster();
-        raycaster.setFromCamera(mouse,camera);
         
-        for(let i = 0; i < objects.length; i++)
+        //event.preventDefault();
+
+
+        //update mousepos
+        mouse.x = (event.clientX / window.innerWidth ) * 2 - 1;
+        mouse.y = - (event.clientY / window.innerHeight ) * 2 + 1;
+
+        //find the intersections
+
+        var vector = new THREE.Vector3(mouse.x, mouse.y, 1);
+        vector.unproject(camera);
+        var ray = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize());
+
+        //make raycasts that check for objects that are in the planets array
+        var intersects = ray.intersectObjects(planets);
+
+        if(intersects.length > 0)
         {
-            intersects[i] = raycaster.intersectObjects(objects[i]);
+            let selectedPlanet = intersects[0].object.userData.name;
+            console.log(selectedPlanet);
+        
+            document.getElementById("planetText").innerHTML = selectedPlanet;
         }
-
-
-        if(intersects && intersects.length > 0)
-        {
-            document.getElementById("planetText").innerHTML = "Je hebt op " + this.intersects + " geklikt."
-        } 
-        
     }
+
+       
+
 
