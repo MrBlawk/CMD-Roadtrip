@@ -93,9 +93,9 @@ var scene = new THREE.Scene( );
      var geometry = new THREE.SphereGeometry( 2,32,16);
     // var cubeMaterials = [
     //     new THREE.MeshLambertMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
-    //     new THREE.MeshPhongMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
-    //     new THREE.MeshLambertMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
-    //     new THREE.MeshPhongMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
+    //     new THREE.MeshPhongMaterial( { map: new THREE.TextureLoader( ).load('img/6jpg'), side: THREE.DoubleSide } ),
+    //     new THREE.MeshPhongMaterial( { map: new THREE.TextureLoader( ).l1jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
+    //     new THREE.MeshLambertMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.oad('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
     //     new THREE.MeshLambertMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } ),
     //     new THREE.MeshPhongMaterial( { map: new THREE.TextureLoader( ).load('img/61jn9dLLVYL._AC_SL1500_.jpg'), side: THREE.DoubleSide } )
     // ];

@@ -51,31 +51,57 @@
     </div>
 
     <div>
-    <div class="main h-full w-full bg-no-repeat" id="levelThree">
+
+    <!-- Level T-->
+    <div class="main h-fit w-fit" id="levelThree">
 
         <!-- experience wide stretched background -->
 
 
         <div class="h-full w-full" id="container">
-            <div class="parallax-bg-1 staticbg h-full w-full"></div>
-            <div class="parallax-bg-2 staticbg h-full w-full"></div>
-
-
-
-            <img class="van-img" src="./img/parallax_asset/volkswagen-van.png" alt="" style="position: absolute;">
             
-            <div id="cloudLayer" class="w-full h-full absolute">
+            <div class="fixed z-99 h-full w-full">
+                <img class="absolute bottom-0 h-full w-screen" src="./img/parallax_asset/grond-layer.png" alt="">
+            </div>
+
+            <div class="van-img absolute bottom-10 z-50">
+                <img class="max-h-20" src="./img/parallax_asset/volkswagen-van.png" alt="">
+            </div>
+            
+            <div id="cloudLayer" class="w-full h-full absolute z-50">
                  <!-- Hier worden de cloud images gegenerate  -->
             </div>
 
-            <section class="city one bg-no-repeat" >
-                <div id="communitybase-0" class=""></div>
-                <div id="communitybase-1" class="parallax-1 h-fit w-max"></div>
+            <section class="city one h-fit w-fit bg-cover" >
+                <div id="communitybase-0" class="bottom-20 w-screen z-50">
+                    <img class="absolute bottom-0 h-full w-screen z-50" src="./img/parallax_asset/grond-layer.png" alt="">
+                </div>
+                <div id="communitybase-1" class="parallax-1 absolute h-full w-max">
+                    <img class="absolute left-0 bottom-0 h-full w-ful" src="./img/parallax_asset/Sheet1/layer-1.png" alt="">
+                </div>
+                <div class="parallax-bg-1 staticbg h-full w-full">
+                    <img class=" flex h-full z--3" src="./img/parallax_asset/Sheet1/layer-2.png" alt="">
+                </div>
+
+                
             </section>
 
-            <section class="city two">
-                <div id="competenties-0"></div>
-                <div id="competenties-1" class="parallax-1"></div>
+            <section class="city two h-fit w-fit bg-cover" >
+                <div id="competenties-0" class="bottom-20 w-screen z-50">
+                    <img class="absolute bottom-0 h-full w-screen z-50" src="./img/parallax_asset/grond-layer.png" alt="">
+                </div>
+                <div id="competenties-1" class="parallax-1 absolute h-ful w-max">
+                    <img class="absolute left-0 bottom-0 h-full w-full" src="./img/parallax_asset/Sheet2/S2_layer-1.png" alt="">
+                </div>
+            </section>
+
+            <section class="city three h-fit w-fit bg-cover" >
+                <div id="vragenfort-0" class="bottom-20 w-screen z-50">
+                    <img class="absolute bottom-0 h-full w-screen z-50" src="./img/parallax_asset/grond-layer.png" alt="">
+                </div>
+                <div id="vragenfort-1" class="parallax-1 absolute h-ful w-max">
+                    <img class="absolute left-0 bottom-0 h-full w-full" src="./img/parallax_asset/Sheet3/vragenfort.png" alt="">
+                </div>
             </section>
 
             <section class="city three">
