@@ -108,9 +108,9 @@ var scene = new THREE.Scene( );
     // create minor planets
 
     //custom positions for each planet
-    var planetX = [-18,     -10,      -6,     -3,     5,    8,   15,    20]
-    var planetY = [-10,       10,      -5,      3,     12,    -3,   13,    2]
-    var planetZ = [0,       10,      -10,     -5,    -8,     0,   5,    3]
+    var planetX = [-18,     -10,      -6,     -3,     5,    8,   12,    13]
+    var planetY = [-10,       10,      -5,      3,     12,    -3,   10,    2]
+    var planetZ = [0,       10,      -10,     -5,    -8,     0,   5,    -5]
 
     function createSpheres(type){
         for(let i = 0; i < minors.length; i++)
@@ -173,7 +173,7 @@ var scene = new THREE.Scene( );
     sLight.shadow.camera.far = 2000;
     scene.add(sLight);
 
-    var aLight = new THREE.AmbientLight( 0xFFFFFF, 0.3)
+    var aLight = new THREE.AmbientLight( 0xFFFFFF, 0.2)
     aLight.castShadow = true;
     scene.add( aLight );
 
