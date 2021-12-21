@@ -83,8 +83,8 @@ function CloudEngine(){
     container = document.getElementById("cloudLayer");  
     container.innerHTML += obj;  
     cloud = document.getElementById("cloud");
-    cloud.style.left = "110%%";
-    translate(cloud, "-500");
+    cloud.style.left = "101%";
+    translate(cloud, "-1900");
 
 }
 
@@ -94,7 +94,7 @@ function translate(e, x){
         dx = left - x,
         i = 1,
         count = 3000,
-        delay = 1;
+        delay = 20;
 
     function loop() {
         
