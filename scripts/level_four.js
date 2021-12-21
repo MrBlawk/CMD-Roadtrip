@@ -15,7 +15,9 @@ var mouse = new THREE.Vector2();
 var scene = new THREE.Scene( ); 
     var camera =  new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 500);
     // camera position
-    camera.position.z = 40;
+    camera.position.set(0, 15, 50)
+
+
 
     //skybox stuff
     //settingup the materialarray and defining the textures to a let.
@@ -169,6 +171,11 @@ var scene = new THREE.Scene( );
     var GameLoop = function ( ){
     requestAnimationFrame(GameLoop);
 
+    planets.forEach(function(element){
+        //element.rotation.x += returnRandom();
+        element.rotation.y += returnRandom();
+        element.rotation.z += returnRandom();
+    })
 
     update( );
     render( );
@@ -202,6 +209,11 @@ var scene = new THREE.Scene( );
         
             document.getElementById("planetText").innerHTML = selectedPlanet;
         }
+    }
+
+    function returnRandom(){
+        let varNum = Math.random() * (0.0008 - -0.0005);
+        return varNum;
     }
 
        
