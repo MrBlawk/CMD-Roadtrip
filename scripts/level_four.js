@@ -1,6 +1,6 @@
 import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
 import { OrbitControls } from "https://threejs.org/examples/jsm/controls/OrbitControls.js";
-import { GLTFLoader } from 'https://threejs.org/examples/jsm/loaders/GLTFLoader.js';
+//import { GLTFLoader } from 'https://threejs.org/examples/jsm/loaders/GLTFLoader.js';
 
 
 
@@ -81,6 +81,7 @@ var scene = new THREE.Scene( );
 
     // create minor planets
 
+    //custom positions for each planet
     var planetX = [-18,     -10,      -6,     -3,     5,    8,   15,    20]
     var planetY = [0,       10,      -1,      8,     16,    0,   15,    2]
     var planetZ = [0,       10,      -10,     -5,    -8,     0,   5,    0]
@@ -122,6 +123,7 @@ var scene = new THREE.Scene( );
             var geometry = new THREE.SphereGeometry(2, 32, 16);
             var material = new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/' + texture + ".png")})
             var sphere = new THREE.Mesh(geometry, material);
+            sphere.rotation.x = Math.random() * (20 - 0);
             sphere.position.set(x, y, z)
             sphere.userData.name = texture;
             console.log(sphere.userData.name)
@@ -199,13 +201,42 @@ var scene = new THREE.Scene( );
         vector.unproject(camera);
         var ray = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize());
 
-        //make raycasts that check for objects that are in the planets array
+        //make raycasts that checks for objects that are in the planets array
         var intersects = ray.intersectObjects(planets);
 
         if(intersects.length > 0)
         {
             let selectedPlanet = intersects[0].object.userData.name;
             console.log(selectedPlanet);
+
+            switch (selectedPlanet) {
+                case "artandsound":
+
+                    break;
+                case "concepting":
+
+                    break;
+                case "gd3d":
+
+                    break;    
+                case "bad":
+
+                    break;     
+                case "ondernemen":
+
+                    break;
+                case "sds":
+
+                    break;
+                case "tnw":
+
+                    break;    
+                case "neuromarketing":
+
+                    break;       
+                default:
+                    break;
+            }
         
             document.getElementById("planetText").innerHTML = selectedPlanet;
         }
