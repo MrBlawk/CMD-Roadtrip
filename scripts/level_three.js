@@ -7,7 +7,7 @@ car.autoAlpha = 0;
 
 //scrolling first basic layer
 gsap.to(sections, {
-  xPercent: -100 * (sections.length - 1),
+  xPercent: -104 * (sections.length - 1),
   ease: "none",
   scrollTrigger: {
     trigger: "#levelThree",
@@ -57,8 +57,7 @@ gsap.to(bg, {
         trigger: "#levelThree",
         start: "0",
         scrub: 1,
-        end: "+3500",
-        ease: Power0
+        end: "+3500"
     }
 })
 
@@ -71,7 +70,6 @@ gsap.to(px3, {
         start: "0",
         scrub: 1,
         end: "+=" + scrollLength,
-
     }
 })
 
