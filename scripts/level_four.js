@@ -149,6 +149,7 @@ var scene = new THREE.Scene( );
         function createMesh(texture, x, y, z){
             var geometry = new THREE.SphereGeometry(2, 32, 16);
             var material = new THREE.MeshLambertMaterial({map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/' + texture + ".png")})
+            material.opacity = 2.0;
             var sphere = new THREE.Mesh(geometry, material);
             sphere.rotation.x = Math.random() * (20 - 0);
             sphere.position.set(x, y, z)
@@ -219,6 +220,9 @@ var scene = new THREE.Scene( );
         
         //event.preventDefault();
 
+        let clickEffect = new Audio("./audio/clickeffect.mp3");
+        clickEffect.volume = 0.4;
+
 
         //update mousepos
         mouse.x = (event.clientX / window.innerWidth ) * 2 - 1;
@@ -241,13 +245,22 @@ var scene = new THREE.Scene( );
         if(intersects.length > 0)
         {
             let selectedPlanet = intersects[0].object.userData.name;
-            console.log(selectedPlanet);
+
+            clickEffect.play();
+
+            //change color of clicked planet
+            let selectedMaterial = intersects[0].object;
+            selectedMaterial.material.color = new THREE.Color(0x7A7372)
+            selectedMaterial.material.needsUpdate = true;
+
+
             switch (selectedPlanet) {
                 case "artandsound":
                     console.log(selectedPlanet);
                     header.innerHTML = "Art 'n Sound";
                     paragraph.innerHTML = "Zit je helemaal in de wereld van muziek en/of audio, dan klinkt dit als muziek in je oren!" + "<p>Wat leer je:</p>";
                     list.innerHTML = "Sound Effects" + "<li>Componeren</li>";
+
                     break;
                 case "concepting":
                     console.log(selectedPlanet);
@@ -303,3 +316,5 @@ var scene = new THREE.Scene( );
         let varNum = Math.random() * (0.0008 - -0.0005);
         return varNum;
     }
+
+
