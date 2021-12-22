@@ -52,12 +52,13 @@ gsap.to(car, {
 let bg = document.querySelectorAll(".staticbg")
 
 gsap.to(bg, {
-    xPercent: -50,
+    xPercent: -80,
     scrollTrigger:{
         trigger: "#levelThree",
-        start: "-100",
+        start: "0",
         scrub: 1,
-        end: "+" + scrollLength,
+        end: "+3500",
+        ease: Power0
     }
 })
 
@@ -70,6 +71,7 @@ gsap.to(px3, {
         start: "0",
         scrub: 1,
         end: "+=" + scrollLength,
+
     }
 })
 
@@ -205,19 +207,10 @@ function init() {
         camera.updateProjectionMatrix( );
     } );
 
-    // geometry added
-    var geometry = new THREE.BoxGeometry(1, 1, 1);
-
-    // material, color
-    var material = new THREE.MeshBasicMaterial( {color: 0x000000, wireframe: true } );
-    var cube = new THREE.Mesh( geometry, material );
-    scene.add(cube);
-
     camera.position.z = 3;
 
     var update = function( ){
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.005; 
+
     };
 
     var render = function( ){
