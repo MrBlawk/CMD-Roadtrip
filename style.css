@@ -39,6 +39,10 @@ body{
  
 }
 
+#levelTwo #jobText{
+    max-width: fit-content;
+}
+
 #levelTwo #textContainer p{
     word-break: break-all;
     word-wrap: break-word;
@@ -102,8 +106,8 @@ body{
 /* background layers */
 
 #levelThree .parallax-bg-1{
-    display: flex;
-    width: 500%;
+    display: block;
+    width: 600%;
 }
 
 #levelThree .parallax-bg-2{

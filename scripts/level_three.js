@@ -52,7 +52,7 @@ gsap.to(car, {
 let bg = document.querySelectorAll(".staticbg")
 
 gsap.to(bg, {
-    xPercent: -60,
+    xPercent: -50,
     scrollTrigger:{
         trigger: "#levelThree",
         start: "-100",
