@@ -2,7 +2,7 @@
 let sections = gsap.utils.toArray(".city");
 let car = document.querySelector(".van-img");
 let obj;
-let scrollLength = 7000;
+let scrollLength = 3500;
 car.autoAlpha = 0;
 
 //scrolling first basic layer
@@ -52,12 +52,12 @@ gsap.to(car, {
 let bg = document.querySelectorAll(".staticbg")
 
 gsap.to(bg, {
-    xPercent: -20,
+    xPercent: -60,
     scrollTrigger:{
         trigger: "#levelThree",
-        start: "0",
+        start: "-100",
         scrub: 1,
-        end: "+=" + scrollLength,
+        end: "+" + scrollLength,
     }
 })
 

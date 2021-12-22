@@ -103,13 +103,13 @@ body{
 
 #levelThree .parallax-bg-1{
     display: flex;
-    width: 600%;
+    width: 500%;
 }
 
 #levelThree .parallax-bg-2{
     
     display: flex;
-    width: 700%;
+    width: 600%;
     position: absolute;
 }
 
@@ -129,12 +129,12 @@ body{
 
 
 
-#levelThree #communitybase-1{
+/* #levelThree #communitybase-1{
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: 4;
-}
+} */
 
 /* #levelThree #communitybase-2{
     background-image: url(./img/parallax_asset/Sheet1/layer-2.png);
