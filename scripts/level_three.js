@@ -85,7 +85,6 @@ function CloudEngine(){
     cloud = document.getElementById("cloud");
     cloud.style.left = "101%";
     translate(cloud, "-1900");
-
 }
 
 function translate(e, x){
@@ -127,9 +126,12 @@ function css( element, property ) {
 CloudEngine();
 
 
+
+
 //begin 3d canvas
 
 import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
+import StarrySkyShader from './StarrySkyShader.js';
 
 var scene, camera, hlight, renderer;
 
@@ -146,8 +148,12 @@ function resizeRendererToDisplaySize(renderer) {
 }
 
 
+
+
 function init() {
     const canvas = document.getElementById("observatorium")
+
+
 
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 1000);
@@ -169,6 +175,26 @@ function init() {
     camera.aspect = canvas.clientWidth / canvas.clientHeight;
     camera.updateProjectionMatrix();
     }
+
+    var skyDomeRadius = 300;
+    var sphereMaterial = new THREE.ShaderMaterial({
+    uniforms: {
+        skyRadius: { value: skyDomeRadius },
+        env_c1: { value: new THREE.Color('#0d1a2f') },
+        env_c2: { value: new THREE.Color('#ea8ff2') },
+        noiseOffset: { value: new THREE.Vector3(10, 100.01, 100.01) },
+        starSize: { value: 0.01 },
+        starDensity: { value: 0.09 },
+        clusterStrength: { value: 0.2 },
+        clusterSize: { value: 0.1 },
+    },
+    vertexShader: StarrySkyShader.vertexShader,
+    fragmentShader: StarrySkyShader.fragmentShader,
+    side: THREE.DoubleSide,
+    });
+    var sphereGeometry = new THREE.SphereGeometry(skyDomeRadius, 40, 40);
+    var skyDome = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    scene.add(skyDome);
 
     // resize
     window.addEventListener( 'resize', function(){

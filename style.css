@@ -148,6 +148,14 @@ body{
 
 
 
+#levelThree #communities-1{
+    
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+}
+
 #levelThree #competenties-1{
     
     width: 100%;
@@ -157,6 +165,22 @@ body{
 }
 
 #levelThree #vragenfort-1{
+    
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+}
+
+#levelThree #kosmopolitisme-1{
+    
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+}
+
+#levelThree #prakticity-1{
     
     width: 100%;
     height: 100%;
