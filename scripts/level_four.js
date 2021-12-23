@@ -148,7 +148,7 @@ var scene = new THREE.Scene( );
 
         function createMesh(texture, x, y, z){
             var geometry = new THREE.SphereGeometry(2, 32, 16);
-            var material = new THREE.MeshLambertMaterial({map: new THREE.TextureLoader().load('./img/Minor_Planet/Planeet_Textures/' + texture + ".png")})
+            var material = new THREE.MeshLambertMaterial({map: new THREE.TextureLoader().load('./Planeet_Textures/' + texture + ".png")})
             material.opacity = 2.0;
             var sphere = new THREE.Mesh(geometry, material);
             sphere.rotation.x = Math.random() * (20 - 0);
