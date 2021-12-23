@@ -213,6 +213,11 @@ body{
     cursor: pointer;
 }
 
+#levelThree .boxShadow{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    max-width:fit-content
+}
+
 .canvas {
     z-index: -1;
     position: absolute;
