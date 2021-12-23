@@ -35,7 +35,6 @@ body{
 
 #levelTwo #textContainer{
     overflow-x: hidden;
-    background-color: white;
     border-radius: 5%;
     overflow-y: scroll;
     font-size: 2vw;
@@ -252,4 +251,8 @@ body{
 
 ::-webkit-scrollbar-thumb:hover{
     background: linear-gradient(#f2709c, #ff9472);
+}
+
+.darker-img{
+    filter: brightness(30%);
 }

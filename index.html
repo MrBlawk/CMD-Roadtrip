@@ -13,14 +13,17 @@
     <!-- Page one has been deprecated, scripts will start counting at 2. -->
 
     <!-- page two -->
-    <div class="grid grid-rows-3 grid-flow-col" id="levelTwo">
-        <div class="row-span-3 h-4/5 object-fill max-h-screen border-dashed border-4 border-stone-900 text-center m-10" id="textContainer"></div>
+    <div class="grid grid-rows-3 grid-flow-col h-screen" id="levelTwo">
+        <img class="darker-img w-3/6" src="./img/laptop-bg.png" alt="">
+        <div class="absolute w-3/6 bottom-10 top-10 bg-transparent">
+            <h1 class="text-white text-center text-2xl font-bold">Scroll door de beroepen!</h1>
+        <div class="row-span-3 h-4/5 object-fill max-h-screen text-center text-white m-10" id="textContainer"></div>
+        </div>
 
-
-            <div class="row-span-1 col-span-1 mt-32 ml-10 mr-10 bg-white-200 shadow-xl" style="border-left: 5px solid red;
+            <div class="absolute row-span-1 col-span-1 mt-10 ml-10 right-10 bg-white-200 shadow-x h-3/6 w-2/5 overflow-scroll" style="border-left: 5px solid red;
             border-radius: 3px; border-top: 1px solid gray; border-right: 1px solid gray; border-bottom: 1px solid gray;" >
-                <div class="sm:m-2 md:m-5 lg:m-10">
-                    <div class="sm:my-1 text-base md:my-2 lg:my-5">
+                <div class="sm:p-2 md:p-5 lg:p10">
+                    <div class="sm:py-1 text-base md:py-2 lg:py-5">
                         <h1 class="sm:text-base md:text-xl lg:text-3xl font-bold">Wat kun je met CMD worden?</h1>
                     </div>
                     <div>
@@ -30,16 +33,16 @@
                 </div>
             </div>
 
-            <div class="relative row-span-1 col-span-1 mt-32 ml-10 mr-10 bg-gray-200 shadow-xl">
-                <div class="sm:m-2 md:m-5 lg:m-10 ">
-                    <h1 class="sm:text-base md:text-xl lg:text-3xl sm:my-1 text-base md:my-2 lg:my-5 font-bold">
+            <div class="absolute row-span-1 col-span-1 mt-9 ml-3/6 right-10 bg-gray-200 shadow-xl h-2/6 w-2/5 bottom-10">
+                <div class="sm:p-2 md:p-5 lg:p-10 ">
+                    <h1 class="sm:text-base md:text-xl lg:text-3xl sm:my-1 text-base md:my-1 lg:my-2.5 font-bold">
                         Later ook zo'n toffe baan?
                     </h1>
                     <p class="sm:text-sm md:text-base lg:text-2xl sm:my-1">
                         Ontdek nu of Communicatie en Multimedia Design bij jou past!
                     </p>
                 </div>
-                <div class="relative flex justify-center mb-1 mt-12">
+                <div class="relative flex justify-center pb-4 pt-0">
                     <button onclick="startExperience()" class="py-4 px-8 rounded bg-gradient-to-r from-red-500 to-red-700 hover:from-yellow-500 hover:to-amber-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out">START</button>
                 </div>
             </div>
