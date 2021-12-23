@@ -83,6 +83,8 @@ document.querySelectorAll(".joblistItem").forEach(item => {
             case jobsArray[9]:
                 textContent = jobsBeschrijving[9];
             break;
+            case jobsArray[10]:
+                textContent = jobsBeschrijving[10];
         default:
             console.log("error, dit beroep heeft geen beschrijving...")
         }
