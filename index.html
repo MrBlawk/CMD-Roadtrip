@@ -9,23 +9,18 @@
     <title>CMD-Roadtrip</title>
 </head>
 <body>
-    <div class="flex main bg-white-100 h-screen w-screen" id="levelOne">
+    <!-- Page one has been deprecated, scripts will start counting at 2. -->
 
-        <img src="./img/bg.jpg" alt="" class="m-auto w-screen">
-
-
-
-    </div>
-
+    <!-- page two -->
     <div class="grid grid-rows-3 grid-flow-col" id="levelTwo">
         <div class="row-span-3 h-4/5 object-fill max-h-screen border-dashed border-4 border-stone-900 text-center m-10" id="textContainer"></div>
 
 
-            <div class="row-span-1 col-span-1 mt-32 ml-10 mr-10 bg-gray-200 rounded-lg shadow-xl" style="border-left: 5px solid red;
-            border-radius: 3px;" >
+            <div class="row-span-1 col-span-1 mt-32 ml-10 mr-10 bg-white-200 shadow-xl" style="border-left: 5px solid red;
+            border-radius: 3px; border-top: 1px solid gray; border-right: 1px solid gray; border-bottom: 1px solid gray;" >
                 <div class="sm:m-2 md:m-5 lg:m-10">
                     <div class="sm:my-1 text-base md:my-2 lg:my-5">
-                        <h1 class="sm:text-base md:text-xl lg:text-3xl">Wat kun je met CMD worden?</h1>
+                        <h1 class="sm:text-base md:text-xl lg:text-3xl font-bold">Wat kun je met CMD worden?</h1>
                     </div>
                     <div>
                         <p class="sm:text-sm md:text-base lg:text-1xl">Bij CMD Leeuwarden kun je je in allerlei verschillende beroepen specialiseren.</p>
@@ -34,19 +29,24 @@
                 </div>
             </div>
 
-            <div class="row-span-1 col-span-1 mt-32 ml-10 mr-10 bg-gray-200 rounded-lg shadow-xl">
-                <div class="flex align-middle content-center bottom-0">
-                    <button onclick="startExperience()" class="py-4 px-8 rounded self-center m-auto bg-gradient-to-r from-red-500 to-red-700 hover:from-yellow-500 hover:to-amber-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out">Dit wil ik worden!</button>
+            <div class="relative row-span-1 col-span-1 mt-32 ml-10 mr-10 bg-gray-200 shadow-xl">
+                <div class="sm:m-2 md:m-5 lg:m-10 ">
+                    <h1 class="sm:text-base md:text-xl lg:text-3xl sm:my-1 text-base md:my-2 lg:my-5 font-bold">
+                        Later ook zo'n toffe baan?
+                    </h1>
+                    <p class="sm:text-sm md:text-base lg:text-2xl sm:my-1">
+                        Ontdek nu of Communicatie en Multimedia Design bij jou past!
+                    </p>
+                </div>
+                <div class="relative flex justify-center mb-1 mt-12">
+                    <button onclick="startExperience()" class="py-4 px-8 rounded bg-gradient-to-r from-red-500 to-red-700 hover:from-yellow-500 hover:to-amber-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out">START</button>
                 </div>
             </div>
-            
-
-
     </div>
 
-    <div>
 
-    <!-- Level T-->
+
+    <!-- Level Three-->
     <div class="" id="levelThree">
 
         <div class="absolute z-50 pointer-events-none"> <img class="h-screen w-screen pointer-events-none" src="./img/wrapper-wit.png" alt=""></div>
@@ -128,17 +128,13 @@
                     <img class="absolute h-full w-screen" src="./img/parallax_asset/Sheet6/Achtergrond 1.png" alt="">
                     <div id="observatorium" class="absolute left-0 h-full w-screen"></div>
                 </div>
-                
                 </a>
-
             </section>
         </div>
     </div>
 
+    <!-- In section city six there is a button referring to level four, which is a seperate html -->
 
-
-
-  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
     <script src="./scripts/level_one.js"></script>
