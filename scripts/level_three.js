@@ -234,7 +234,17 @@ function init() {
 
 init();
 
+//clickable image animation code below
 
+let btn = document.querySelector(".six");
+let img = document.getElementById("observatorium")
+
+
+
+btn.addEventListener('click', function(event){
+    console.log("clicked");
+    location.href = "minors.html";
+})
 
 
 

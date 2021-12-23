@@ -120,15 +120,17 @@
             </section>
 
             <section class="city six h-fit w-screen bg-cover z-40">
-                <a href="./minors.html" target="_blank">
+                <div class="absolute text-white" style="z-index: 99; left: 50%; top: 10%;">        
+                    <h1 class="m-auto my-10" style="font-size: xx-large;">Klik op een minorplaneet!</h1>
+                </div>
                 <div id="minorplanets-0" class="bottom-20 w-screen z-50">
                     <img class="absolute bottom-0 h-full w-screen z-50" src="./img/parallax_asset/Wegen/Weg1.png" alt="">
                 </div>
                 <div id="minorplanets-1" class="parallax-1 h-full w-max z-40">
                     <img class="absolute h-full w-screen" src="./img/parallax_asset/Sheet6/Achtergrond 1.png" alt="">
-                    <div id="observatorium" class="absolute left-0 h-full w-screen"></div>
+
+                    <div id="observatorium" class="absolute left-0"></div>
                 </div>
-                </a>
             </section>
         </div>
     </div>
@@ -137,13 +139,19 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
-    <script src="./scripts/level_one.js"></script>
+
     
     <script type="module" src="./scripts/level_two.js"></script>
     <script type="module" src="./scripts/level_three.js"></script>
 
 </body>
 </html>
+
+<script>
+    function startExperience(){
+    document.getElementById("levelThree").scrollIntoView({behavior: 'smooth'});
+    }
+</script>
 
 
 

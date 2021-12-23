@@ -109,8 +109,8 @@ var scene = new THREE.Scene( );
     // create minor planets
 
     //custom positions for each planet
-    var planetX = [-13,     -10,      -6,     -3,     5,    8,   12,    13]
-    var planetY = [-10,       10,      -5,      3,     12,    -3,   10,    2]
+    var planetX = [-13,     -6,      -6,     -3,     5,    8,   12,    13]
+    var planetY = [-10,       5,      -5,      3,     12,    -3,   10,    2]
     var planetZ = [0,       10,      -10,     -5,    -8,     0,   5,    -5]
 
     function createSpheres(type){
