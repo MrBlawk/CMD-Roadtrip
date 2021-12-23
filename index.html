@@ -7,7 +7,7 @@
     <link href="https://unpkg.com/tailwindcss@%5E2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>CMD-Roadtrip</title>
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">      
 </head>
 <body>
     <!-- Page one has been deprecated, scripts will start counting at 2. -->
@@ -50,7 +50,7 @@
     <!-- Level Three-->
     <div class="" id="levelThree">
 
-        <div class="absolute z-50 pointer-events-none"> <img class="h-screen w-screen pointer-events-none" src="./img/wrapper-wit.png" alt=""></div>
+        <div class="absolute pointer-events-none" style="z-index: 99;"> <img class="h-screen w-screen pointer-events-none" src="./img/wrapper-wit.png" alt=""></div>
 
         <!-- experience wide stretched background -->
         <div class="fixed h-screen parallax-bg-1 staticbg">
@@ -63,8 +63,8 @@
             </div>
 
 
-            <div class="absolute bottom-16 z-50 w-full">
-                <img class="max-h-20 z-50 van-img" src="./img/parallax_asset/CMD_Van.png" alt="">
+            <div class="absolute bottom-20 left-20 z-50 w-full">
+                <img class="max-h-20 z-549 van-img" src="./img/parallax_asset/CMD_Van.png" alt=""  >
             </div>
             
             <div id="cloudLayer" class="absolute h-full w-full shadow z-40">
@@ -163,6 +163,9 @@
                         Bij CMD kun je op basis van je passie, talent en ambitie je eigen opleiding inrichten. 
                     </p>
                     <p class="mx-10 sm:text-sm md:text-base lg:text-1xl" style="font-style: italic;">Verken de verschillende werelden binnen CMD door op het observatorium te klikken.</p>
+                    <div class="relative flex justify-center mb-1 mt-12">
+                        <button class="py-4 px-8 rounded bg-gradient-to-r from-red-500 to-red-700 hover:from-yellow-500 hover:to-amber-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out">Ga het observatorium in</button>
+                    </div>
                 </div>
 
                 <div id="minorplanets-0" class="bottom-20 w-screen z-50">

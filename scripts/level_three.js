@@ -23,7 +23,7 @@ gsap.to(sections, {
 
 //move car
 gsap.to(car, {
-    xPercent: 330,
+    xPercent: 600,
     scrollTrigger:{
         trigger: "#levelThree",
         start: "0",
