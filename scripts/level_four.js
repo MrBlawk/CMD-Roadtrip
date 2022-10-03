@@ -1,5 +1,5 @@
-import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
-import { OrbitControls } from "https://threejs.org/examples/jsm/controls/OrbitControls.js";
+import * as THREE from 'three';
+import { OrbitControls } from 'https://threejs.org/examples/jsm/controls/OrbitControls.js';
 //import { GLTFLoader } from 'https://threejs.org/examples/jsm/loaders/GLTFLoader.js';
 import StarrySkyShader from './StarrySkyShader.js';
 
@@ -9,8 +9,6 @@ var minors = ["artandsound", "concepting", "gd3d", "bad", "ondernemen", "sds", "
 
 //track mouse as a vector2 position (x,y)
 var mouse = new THREE.Vector2();
-
-
 
 var scene = new THREE.Scene( ); 
     var camera =  new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 500);
